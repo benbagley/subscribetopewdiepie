@@ -28,9 +28,9 @@ class RecentVideo extends React.Component {
 
     handleLoad() {
         fetch(outputtedURL)
-            .then((ressponse) => ressponse.json())
-            .then((ressponseJson) => {
-                const recentYTVideo = ressponseJson.items.map(obj => "https://www.youtube.com/embed/" + obj.id.videoId);
+            .then((response) => response.json())
+            .then((responseJson) => {
+                const recentYTVideo = responseJson.items.map(obj => "https://www.youtube.com/embed/" + obj.id.videoId);
                 this.setState({recentYTVideo});
             })
             .catch((error) => {
